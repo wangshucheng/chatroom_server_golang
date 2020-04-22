@@ -7,7 +7,7 @@ import (
 )
 
 func Listening() {
-	tcpListen, err := net.Listen("tcp", ":8086")
+	tcpListen, err := net.Listen("tcp", ":1238")
 
 	if err != nil {
 		panic(err)
@@ -33,7 +33,7 @@ func  connHandle(conn net.Conn) {
 		}
 
 		conn.Write([]byte("hello too\n"))
-		fmt.Println(readBuff[:n])
+		fmt.Println(string(readBuff[:n]))
 
 	}
 }
